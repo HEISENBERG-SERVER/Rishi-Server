@@ -1,0 +1,11 @@
+const express = require("express")
+const cors = require("cors")
+const app = express()
+const Register = require("./Register.js")
+const plans = require("./routes.js")
+
+app.use(cors({origin: "https://followers.heisenberg.in.net/"})) 
+app.use("/plans", plans)
+app.use("/user",Register)
+app.get("/",(req,res)=>{res.json({message:"Server Is Working"})})
+app.listen(4000)
