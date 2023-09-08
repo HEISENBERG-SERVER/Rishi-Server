@@ -2,9 +2,9 @@ const express = require("express")
 const app2 = express()
 const UserName = require("./usermodel")
 const mongoose = require("mongoose")
+const cors = require("cors")
 
-
-
+app2.use(cors())
 
  app2.use(express.json());
 
