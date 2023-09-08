@@ -24,7 +24,8 @@ xyz.create(req.body).then(()=>{res.json({message:"Successfully Registered"})})
 app.get("/getallusers",async (req,res)=>{
     await mongoose.connect("mongodb+srv://heisenbergdatabase1:uDVtMXlxymOMO8eX@cluster0.vwlkprw.mongodb.net/").then(async ()=>{
     
-         xyz.find({}).then((response)=>{  res.json({allusers : response })})
+    const allusers = await xyz.find({})
+    res.json({ allusers})
       
   
 })
