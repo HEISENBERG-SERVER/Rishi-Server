@@ -23,7 +23,7 @@ app2.post("/register", async (req,res)=>{
     await mongoose.connect("mongodb+srv://heisenbergdatabase1:uDVtMXlxymOMO8eX@cluster0.vwlkprw.mongodb.net/")
     
 
-console.log(req.body.Rishi)
+
 await UserName.create(req.body.Rishi).then(()=>{res.json({message:"Successfully Registered"})})
 
 
