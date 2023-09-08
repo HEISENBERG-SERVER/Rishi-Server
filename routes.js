@@ -4,9 +4,7 @@ const app1 = express()
 const Plan = require("./model")
 const mongoose = require("mongoose")
 const UserName = require("./usermodel")
-const cors = require("cors")
 
-app1.use(cors({origin: "https://followers.heisenberg.in.net"}))
 app1.use(express.json())
 // app1.use(function(req, res, next) {
 //     res.set("Access-Control-Allow-Origin", 'https://followers.heisenberg.in.net');
@@ -46,14 +44,7 @@ await Plan.deleteMany({ planname: drop })
    
   
 })
-app1.post("/registering", async (req,res)=>{
-    await mongoose.connect("mongodb+srv://heisenbergdatabase1:uDVtMXlxymOMO8eX@cluster0.vwlkprw.mongodb.net/")
-  
-    
-await UserName.create(req.body.Rishi).then(()=>{res.json({message:"Successfully Registered"})})
 
-
-})
 
 
 
