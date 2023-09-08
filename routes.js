@@ -7,6 +7,12 @@ const UserName = require("./usermodel")
 
     // app.use(bodyParser.urlencoded({extended:false}))
 app1.use(express.json())
+app1.use(function(req, res, next) {
+    res.set("Access-Control-Allow-Origin", 'https://followers.heisenberg.in.net');
+    res.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.set('Access-Control-Allow-Methods', 'POST, GET, PUT, PATCH, DELETE, OPTIONS');
+  
+    next();})
 app1.get("/showplans", async(req, res) => {
     await mongoose.connect("mongodb+srv://heisenbergdatabase1:uDVtMXlxymOMO8eX@cluster0.vwlkprw.mongodb.net/")
     try {
@@ -41,7 +47,7 @@ await Plan.deleteMany({ planname: drop })
 })
 app1.post("/register", async (req,res)=>{
     await mongoose.connect("mongodb+srv://heisenbergdatabase1:uDVtMXlxymOMO8eX@cluster0.vwlkprw.mongodb.net/")
-    
+    res.setHeader('access')
     
 await UserName.create(req.body.Rishi).then(()=>{res.json({message:"Successfully Registered"})})
 
