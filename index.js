@@ -8,5 +8,5 @@ app.use(cors())
 // {origin: "https://followers.heisenberg.in.net"}
 app.use("/plans", plans)
 app.use("/user",Register)
-app.get("/",(req,res)=>{res.json({message:"Server Is Working"})})
+app.get("/",(req,res)=>{res.json({message:"Server Is Workingcheck"})})
 app.listen(4000)

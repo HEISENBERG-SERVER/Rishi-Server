@@ -19,7 +19,7 @@ app2.get("/getallusers",async (req,res)=>{
 app2.post("/register", async (req,res)=>{
     await mongoose.connect("mongodb+srv://heisenbergdatabase1:uDVtMXlxymOMO8eX@cluster0.vwlkprw.mongodb.net/")
     
-
+    res.setHeader('Access-Control-Allow-Origin');
 
 await UserName.create(req.body.Rishi).then(()=>{res.json({message:"Successfully Registered"})})
 
