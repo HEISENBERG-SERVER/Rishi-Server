@@ -2,12 +2,9 @@ const express = require("express")
 const app2 = express()
 const UserName = require("./usermodel")
 const mongoose = require("mongoose")
-const bodyParser = require("body-parser")
 
-app2.use( bodyParser.json() );       // to support JSON-encoded bodies
-app2.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-    extended: true
- })); 
+
+
 
  app2.use(express.json());
 
