@@ -19,8 +19,10 @@ app2.get("/getallusers",async (req,res)=>{
 app2.post("/register", async (req,res)=>{
     await mongoose.connect("mongodb+srv://heisenbergdatabase1:uDVtMXlxymOMO8eX@cluster0.vwlkprw.mongodb.net/")
     
-    res.setHeader('Access-Control-Allow-Origin');
+    res.setHeader('Access-Control-Allow-Origin', "https://followers.heisenberg.in.net");
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Accept');
 
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 await UserName.create(req.body.Rishi).then(()=>{res.json({message:"Successfully Registered"})})
 
 
