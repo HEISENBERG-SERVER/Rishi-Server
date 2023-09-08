@@ -4,7 +4,7 @@ const app = express()
 const Register = require("./Register.js")
 const plans = require("./routes.js")
 
-app.use(cors( {origin: "https://followers.heisenberg.in.net"})) 
+app.use(cors({origin:"https://followers.heisenberg.in.net"})) 
 // {origin: "https://followers.heisenberg.in.net"}
 app.use("/plans", plans)
 app.use("/user",Register)
