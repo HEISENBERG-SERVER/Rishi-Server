@@ -4,15 +4,16 @@ const app1 = express()
 const Plan = require("./model")
 const mongoose = require("mongoose")
 const UserName = require("./usermodel")
+const cors = require("cors")
 
-    // app.use(bodyParser.urlencoded({extended:false}))
+app1.use(cors({origin: "https://followers.heisenberg.in.net"}))
 app1.use(express.json())
-app1.use(function(req, res, next) {
-    res.set("Access-Control-Allow-Origin", 'https://followers.heisenberg.in.net');
-    res.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.set('Access-Control-Allow-Methods', 'POST, GET, PUT, PATCH, DELETE, OPTIONS');
+// app1.use(function(req, res, next) {
+//     res.set("Access-Control-Allow-Origin", 'https://followers.heisenberg.in.net');
+//     res.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     res.set('Access-Control-Allow-Methods', 'POST, GET, PUT, PATCH, DELETE, OPTIONS');
   
-    next();})
+    // next();})
 app1.get("/showplans", async(req, res) => {
     await mongoose.connect("mongodb+srv://heisenbergdatabase1:uDVtMXlxymOMO8eX@cluster0.vwlkprw.mongodb.net/")
     try {
@@ -45,9 +46,9 @@ await Plan.deleteMany({ planname: drop })
    
   
 })
-app1.post("/register", async (req,res)=>{
+app1.post("/registering", async (req,res)=>{
     await mongoose.connect("mongodb+srv://heisenbergdatabase1:uDVtMXlxymOMO8eX@cluster0.vwlkprw.mongodb.net/")
-    res.setHeader('access')
+  
     
 await UserName.create(req.body.Rishi).then(()=>{res.json({message:"Successfully Registered"})})
 
