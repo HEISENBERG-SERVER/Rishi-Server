@@ -3,7 +3,7 @@ const express = require("express")
 const app1 = express()
 const Plan = require("./model")
 const mongoose = require("mongoose")
-const UserName = require("./usermodel")
+
 
 app1.use(express.json())
 // app1.use(function(req, res, next) {

@@ -3,6 +3,8 @@ const cors = require("cors")
 const app = express()
 const Register = require("./Register.js")
 const plans = require("./routes.js")
+const UserName = require("./usermodel")
+const mongoose = require("mongoose")
 
 app.use(cors({origin: "https://followers.heisenberg.in.net"})) 
 // {origin: "https://followers.heisenberg.in.net"}
