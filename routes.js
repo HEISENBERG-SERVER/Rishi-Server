@@ -1,8 +1,9 @@
 const express = require("express")
-    // const bodyParser = require("body-parser")
+   
 const app1 = express()
 const Plan = require("./model")
 const mongoose = require("mongoose")
+const UserName = require("./usermodel")
 
     // app.use(bodyParser.urlencoded({extended:false}))
 app1.use(express.json())
